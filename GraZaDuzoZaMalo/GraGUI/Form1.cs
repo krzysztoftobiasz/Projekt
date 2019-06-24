@@ -33,5 +33,15 @@ namespace GraGUI
 
             g = new Gra( zakresOd, zakresDo );
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxZakresOd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
