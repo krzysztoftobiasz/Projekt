@@ -20,3 +20,4 @@ namespace GraGUI
         }
     }
 }
+//komentarz dla testu
