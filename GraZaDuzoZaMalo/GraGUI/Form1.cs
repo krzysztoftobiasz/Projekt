@@ -27,7 +27,7 @@ namespace GraGUI
 
         private void buttonWylosuj_Click(object sender, EventArgs e)
         {
-            // try-catch
+           
             int zakresOd = int.Parse( textBoxZakresOd.Text );
             int zakresDo = int.Parse(textBoxZakresDo.Text);
 
@@ -43,5 +43,16 @@ namespace GraGUI
         {
 
         }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBoxLosowanie_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+//komentarz

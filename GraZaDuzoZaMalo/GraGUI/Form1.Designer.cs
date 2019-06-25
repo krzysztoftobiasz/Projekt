@@ -35,6 +35,7 @@
             this.labelZakresDo = new System.Windows.Forms.Label();
             this.labelZakresOd = new System.Windows.Forms.Label();
             this.textBoxZakresOd = new System.Windows.Forms.TextBox();
+            this.groupBoxWynik = new System.Windows.Forms.GroupBox();
             this.groupBoxLosowanie.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,6 +63,7 @@
             this.groupBoxLosowanie.TabStop = false;
             this.groupBoxLosowanie.Text = "Losowanie";
             this.groupBoxLosowanie.Visible = false;
+            this.groupBoxLosowanie.Enter += new System.EventHandler(this.groupBoxLosowanie_Enter);
             // 
             // buttonWylosuj
             // 
@@ -110,11 +112,23 @@
             this.textBoxZakresOd.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.textBoxZakresOd.TextChanged += new System.EventHandler(this.textBoxZakresOd_TextChanged);
             // 
+            // groupBoxWynik
+            // 
+            this.groupBoxWynik.Location = new System.Drawing.Point(17, 164);
+            this.groupBoxWynik.Name = "groupBoxWynik";
+            this.groupBoxWynik.Size = new System.Drawing.Size(245, 123);
+            this.groupBoxWynik.TabIndex = 2;
+            this.groupBoxWynik.TabStop = false;
+            this.groupBoxWynik.Text = "Wynik";
+            this.groupBoxWynik.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(326, 341);
+            this.Controls.Add(this.groupBoxWynik);
             this.Controls.Add(this.groupBoxLosowanie);
             this.Controls.Add(this.buttonNowaGra);
             this.Name = "Form1";
@@ -135,6 +149,7 @@
         private System.Windows.Forms.Label labelZakresDo;
         private System.Windows.Forms.Label labelZakresOd;
         private System.Windows.Forms.TextBox textBoxZakresOd;
+        private System.Windows.Forms.GroupBox groupBoxWynik;
     }
 }
 
