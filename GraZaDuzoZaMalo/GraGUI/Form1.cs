@@ -27,11 +27,26 @@ namespace GraGUI
 
         private void buttonWylosuj_Click(object sender, EventArgs e)
         {
-           
-            int zakresOd = int.Parse( textBoxZakresOd.Text );
-            int zakresDo = int.Parse(textBoxZakresDo.Text);
+            int zakresOd, zakresDo;
 
+            try
+            {
+
+                zakresOd = int.Parse(textBoxZakresOd.Text);
+                zakresDo = int.Parse(textBoxZakresDo.Text);
+            }
+            catch
+            {
+                zakresOd = 1;
+                zakresDo = 200;
+            }
+            groupBoxZgaduj.Visible = true;
             g = new Gra( zakresOd, zakresDo );
+
+            textBoxZakresOd.Enabled = false;
+            textBoxZakresDo.Enabled = false;
+            buttonWylosuj.Enabled = false;
+            buttonSprawdz.Visible = true;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -50,6 +65,64 @@ namespace GraGUI
         }
 
         private void groupBoxLosowanie_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSprawdz_Click(object sender, EventArgs e)
+        {
+            int zgadywana = 0;
+            Gra.Odp odp;
+            try
+            {
+                zgadywana = int.Parse(textBoxLosuj.Text);
+            }
+            catch
+            {
+
+            }
+            odp = g.Ocena(zgadywana);
+
+            labelRuchy.Text = g.LicznikRuchow.ToString();
+
+            switch(odp)
+            {
+                case Gra.Odp.ZaMalo:
+                    labelWynik.Text = "Za mało";
+                    break;
+
+                case Gra.Odp.ZaDuzo:
+                    labelWynik.Text = "Za dużo";
+                    break;
+
+                case Gra.Odp.Trafiono:
+                    labelWynik.Text = "Udało się!";
+                    break;
+            }
+            if(g.Stan == Gra.StanGry.Odgadnieta)
+            {
+                MessageBox.Show("Poddałeś się!", "Poddanie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
         {
 
         }
