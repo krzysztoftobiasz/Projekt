@@ -28,12 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.listViewHistoria = new System.Windows.Forms.ListView();
+            this.SuspendLayout();
+            // 
+            // listViewHistoria
+            // 
+            this.listViewHistoria.GridLines = true;
+            this.listViewHistoria.HideSelection = false;
+            this.listViewHistoria.LabelEdit = true;
+            this.listViewHistoria.Location = new System.Drawing.Point(0, 3);
+            this.listViewHistoria.Name = "listViewHistoria";
+            this.listViewHistoria.Size = new System.Drawing.Size(372, 295);
+            this.listViewHistoria.TabIndex = 0;
+            this.listViewHistoria.UseCompatibleStateImageBehavior = false;
+            this.listViewHistoria.View = System.Windows.Forms.View.Details;
+            // 
+            // Form2
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form2";
+            this.ClientSize = new System.Drawing.Size(371, 297);
+            this.Controls.Add(this.listViewHistoria);
+            this.Name = "Form2";
+            this.Text = "Historia";
+            this.Load += new System.EventHandler(this.Form2_Load);
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.ListView listViewHistoria;
     }
 }

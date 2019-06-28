@@ -13,7 +13,7 @@ namespace GraGUI
 {
     public partial class Form1 : Form
     {
-        private Gra g;
+        public static  Gra g;
 
         public Form1()
         {
@@ -52,6 +52,7 @@ namespace GraGUI
             }
             groupBoxZgaduj.Visible = true;
             g = new Gra( zakresOd, zakresDo );
+            buttonHistoria.Enabled = true;
 
             textBoxZakresOd.Enabled = false;
             textBoxZakresDo.Enabled = false;
@@ -165,6 +166,27 @@ namespace GraGUI
                 }
 
             }
+        }
+
+        private void buttonHistoria_Click(object sender, EventArgs e)
+        {
+            Form2 historiaF = new Form2();
+            historiaF.Show();
+        }
+
+        private void labelRuchy_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxZakresDo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
