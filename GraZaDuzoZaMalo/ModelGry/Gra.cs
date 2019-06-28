@@ -10,7 +10,7 @@ namespace ModelGry
         public enum StanGry { Trwa, Poddana, Odgadnieta };
 
         // pola
-        private readonly int wylosowana;
+        private  readonly int wylosowana;
         public readonly int ZakresOd, ZakresDo;
         public StanGry Stan { get; private set; }
         public int LicznikRuchow { get; private set; }  = 0;
@@ -53,6 +53,14 @@ namespace ModelGry
         {
             Stan = StanGry.Poddana;
         }
+        public void ResetujLicznik()
+        {
+            if(Stan != StanGry.Trwa)
+            {
+                LicznikRuchow = 0;
+            }
+        }
+   
 
         public int? CoByloWylosowane()
         {

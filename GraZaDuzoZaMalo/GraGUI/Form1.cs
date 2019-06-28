@@ -23,6 +23,16 @@ namespace GraGUI
         private void buttonNowaGra_Click(object sender, EventArgs e)
         {
             groupBoxLosowanie.Visible = true;
+            textBoxZakresOd.Enabled = true;
+            textBoxZakresDo.Enabled = true;
+            buttonWylosuj.Enabled = true;
+            buttonSprawdz.Visible = true;
+            buttonPoddaj.Enabled = true;
+            buttonSprawdz.Enabled = true;
+            textBoxLosuj.Enabled = true;
+            labelWynik.Text = " ";
+
+
         }
 
         private void buttonWylosuj_Click(object sender, EventArgs e)
@@ -100,7 +110,7 @@ namespace GraGUI
 
             labelRuchy.Text = g.LicznikRuchow.ToString();
 
-            switch(odp)
+            switch (odp)
             {
                 case Gra.Odp.ZaMalo:
                     labelWynik.Text = "Za mało";
@@ -114,17 +124,47 @@ namespace GraGUI
                     labelWynik.Text = "Udało się!";
                     break;
             }
-            if(g.Stan == Gra.StanGry.Odgadnieta)
+
+            if (g.Stan == Gra.StanGry.Odgadnieta)
             {
-                MessageBox.Show("Poddałeś się!", "Poddanie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                DialogResult wygrana= MessageBox.Show($"Brawo! Wylosowana liczba to {g.CoByloWylosowane()}" , "Brawo!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                buttonPoddaj.Enabled = false;
+                buttonSprawdz.Enabled = false;
+                textBoxLosuj.Enabled = false;
+
+                if (wygrana == DialogResult.OK)
+                {
+                    groupBoxZgaduj.Visible = false;
+                    groupBoxLosowanie.Visible = false;
+                    buttonNowaGra.Enabled = true;
+                    g.ResetujLicznik();
 
 
+                }
             }
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
+            g.Poddaj();
 
+            if (g.Stan == Gra.StanGry.Poddana)
+            {
+                DialogResult poddanie = MessageBox.Show("Poddałeś się!", "Poddanie", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                buttonPoddaj.Enabled = false;
+                buttonSprawdz.Enabled = false;
+                textBoxLosuj.Enabled = false;
+
+                if (poddanie == DialogResult.OK)
+                {
+                    groupBoxZgaduj.Visible = false;
+                    groupBoxLosowanie.Visible = false;
+                    buttonNowaGra.Enabled = true;
+                    g.ResetujLicznik();
+                }
+
+            }
         }
     }
 }
