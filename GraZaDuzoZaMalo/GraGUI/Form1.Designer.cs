@@ -172,7 +172,7 @@
             this.labelWynik.AutoSize = true;
             this.labelWynik.BackColor = System.Drawing.Color.Transparent;
             this.labelWynik.Font = new System.Drawing.Font("Microsoft Sans Serif", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelWynik.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelWynik.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.labelWynik.Location = new System.Drawing.Point(24, 86);
             this.labelWynik.Name = "labelWynik";
             this.labelWynik.Size = new System.Drawing.Size(0, 51);
